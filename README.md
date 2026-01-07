@@ -54,11 +54,58 @@ Visit `http://localhost:3000` and start chatting. Use the prompts on the start s
 
 ### 5. Deploy your app
 
+#### Deploy to Vercel (Recommended)
+
+This project is configured for easy deployment on Vercel. Follow these steps:
+
+1. **Push your code to GitHub**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin <your-github-repo-url>
+   git push -u origin main
+   ```
+
+2. **Import your project to Vercel**
+   - Go to [Vercel](https://vercel.com) and sign in
+   - Click "Add New" → "Project"
+   - Import your GitHub repository
+   - Vercel will automatically detect Next.js and configure the build settings
+
+3. **Configure Environment Variables in Vercel**
+   - In your Vercel project settings, go to "Environment Variables"
+   - Add the following variables:
+     - `OPENAI_API_KEY` - Your OpenAI API key (from [API Keys](https://platform.openai.com/api-keys))
+     - `NEXT_PUBLIC_CHATKIT_WORKFLOW_ID` - Your workflow ID (from Agent Builder)
+     - (Optional) `CHATKIT_API_BASE` - Custom API base URL if needed
+   - Make sure to add these for **Production**, **Preview**, and **Development** environments
+
+4. **Deploy**
+   - Click "Deploy" and wait for the build to complete
+   - Your app will be available at `https://your-project.vercel.app`
+
+5. **Configure Domain Allowlist (Required)**
+   - After deployment, copy your Vercel deployment URL (e.g., `https://your-project.vercel.app`)
+   - Go to [OpenAI Domain Allowlist](https://platform.openai.com/settings/organization/security/domain-allowlist)
+   - Add your Vercel domain to the allowlist
+   - This is required for ChatKit to work on your deployed domain
+
+6. **Custom Domain (Optional)**
+   - In Vercel project settings, go to "Domains"
+   - Add your custom domain
+   - Update the domain allowlist in OpenAI with your custom domain
+
+#### Local Build Test
+
+Before deploying, you can test the production build locally:
+
 ```bash
 npm run build
+npm start
 ```
 
-Before deploying your app, you need to verify the domain by adding it to the [Domain allowlist](https://platform.openai.com/settings/organization/security/domain-allowlist) on your dashboard.
+This will help you catch any build issues before deploying to Vercel.
 
 ## Customization Tips
 
