@@ -14,12 +14,12 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
   {
     label: "Ask about Program Procedures",
     prompt: "Ask about Program Procedures",
-    icon: "circle-info",
+    icon: "sparkles",
   },
   {
     label: "I have a tech support issue",
     prompt: "I have a tech support issue",
-    icon: "sparkles",
+    icon: "circle-question",
   },
 ];
 
