@@ -93,8 +93,14 @@ This project is configured for easy deployment on Vercel. Follow these steps:
 
 6. **Custom Domain (Optional)**
    - In Vercel project settings, go to "Domains"
-   - Add your custom domain
+   - Click "Add Domain" and enter your custom domain (e.g., `sop-chatbot.livelihoodnw.org`)
+   - Configure DNS: Add a CNAME record pointing to `cname.vercel-dns.com` (or the value Vercel provides)
+     - Type: CNAME
+     - Name: `sop-chatbot` (or your subdomain name)
+     - Value: `cname.vercel-dns.com`
+   - Wait for DNS propagation and SSL certificate provisioning (usually a few minutes)
    - Update the domain allowlist in OpenAI with your custom domain
+   - Vercel will automatically provision an SSL certificate for HTTPS
 
 #### Local Build Test
 

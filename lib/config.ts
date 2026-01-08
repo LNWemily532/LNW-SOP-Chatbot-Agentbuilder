@@ -7,29 +7,43 @@ export const CREATE_SESSION_ENDPOINT = "/api/create-session";
 
 export const STARTER_PROMPTS: StartScreenPrompt[] = [
   {
-    label: "What can you do?",
-    prompt: "What can you do?",
+    label: "Ask about HR policies",
+    prompt: "Ask about HR policies",
     icon: "circle-question",
+  },
+  {
+    label: "Ask about Program Procedures",
+    prompt: "Ask about Program Procedures",
+    icon: "message",
+  },
+  {
+    label: "I have a tech support issue",
+    prompt: "I have a tech support issue",
+    icon: "sparkles",
   },
 ];
 
-export const PLACEHOLDER_INPUT = "Ask anything...";
+export const PLACEHOLDER_INPUT = "Ask about our policies & procedures. Be specific and avoid acronyms.";
 
-export const GREETING = "How can I help you today?";
+export const GREETING = "Hi Livelihood NW, how can I help?";
 
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
   color: {
     grayscale: {
-      hue: 220,
+      // Adjusted to match Livelihood NW's professional aesthetic
+      hue: 180, // Teal/blue-gray base (matching #246579 secondary color)
       tint: 6,
       shade: theme === "dark" ? -1 : -4,
     },
     accent: {
-      primary: theme === "dark" ? "#f1f5f9" : "#0f172a",
-      level: 1,
+      // Livelihood NW brand colors:
+      // Primary: #7cad42 (green) - main brand color
+      // Secondary: #246579 (teal) - supporting color
+      // Dark: #133042 (dark teal) - dark variant
+      primary: theme === "dark" ? "#7cad42" : "#7cad42", // Brand green (#7cad42)
+      level: 2, // Medium-high intensity for brand visibility
     },
   },
   radius: "round",
-  // Add other theme options here
-  // chatkit.studio/playground to explore config options
+  // See: https://chatkit.studio/playground to explore more theme options
 });
