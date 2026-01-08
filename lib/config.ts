@@ -5,23 +5,7 @@ export const WORKFLOW_ID =
 
 export const CREATE_SESSION_ENDPOINT = "/api/create-session";
 
-export const STARTER_PROMPTS: StartScreenPrompt[] = [
-  {
-    label: "Ask about HR policies",
-    prompt: "Ask about HR policies",
-    icon: "circle-question",
-  },
-  {
-    label: "Ask about Program Procedures",
-    prompt: "Ask about Program Procedures",
-    icon: "sparkle",
-  },
-  {
-    label: "I have a tech support issue",
-    prompt: "I have a tech support issue",
-    icon: "circle-question",
-  },
-];
+export const STARTER_PROMPTS: StartScreenPrompt[] = [];
 
 export const PLACEHOLDER_INPUT = "Ask about our policies & procedures. Be specific and avoid acronyms.";
 
