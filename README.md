@@ -78,8 +78,10 @@ This project is configured for easy deployment on Vercel. Follow these steps:
    - Add the following variables:
      - `OPENAI_API_KEY` - Your OpenAI API key (from [API Keys](https://platform.openai.com/api-keys))
      - `NEXT_PUBLIC_CHATKIT_WORKFLOW_ID` - Your workflow ID (from Agent Builder)
+     - `NEXT_PUBLIC_CHATBOT_PASSWORD` - Password to protect the chatbot access (optional but recommended for internal use)
      - (Optional) `CHATKIT_API_BASE` - Custom API base URL if needed
    - Make sure to add these for **Production**, **Preview**, and **Development** environments
+   - **Note:** The password is stored in sessionStorage and persists for the browser session only
 
 4. **Deploy**
    - Click "Deploy" and wait for the build to complete
